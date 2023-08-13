@@ -1,12 +1,15 @@
 /**-----------------------------------------------------------------
- * Profile View                                                    |
+ * ABout View                                                      |
  * View Merupakan Kumpulan Dari Komponen                           |
  *-----------------------------------------------------------------|
  **/
-const ProfileView = () => {
+
+import React from "react";
+
+const AboutView = () => {
   return (
-    <div className="profile">
-      <h2>Profile</h2>
+    <div className="about">
+      <h2>About</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum dolor
         assumenda, itaque nesciunt alias voluptatum nobis blanditiis eos
@@ -30,4 +33,4 @@ const ProfileView = () => {
   );
 };
 
-export default ProfileView;
+export default AboutView;
