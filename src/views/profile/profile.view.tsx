@@ -1,5 +1,8 @@
-import React from "react";
-
+/**-----------------------------------------------------------------
+ * Profile View                                                    |
+ * View Merupakan Kumpulan Dari Komponen                           |
+ *-----------------------------------------------------------------|
+ **/
 const ProfileView = () => {
   return (
     <div className="profile">

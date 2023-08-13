@@ -1,5 +1,8 @@
-import React from "react";
-
+/**-----------------------------------------------------------------
+ * Home View                                                       |
+ * View Merupakan Kumpulan Dari Komponen                           |
+ *-----------------------------------------------------------------|
+ **/
 const HomeView = () => {
   return (
     <div className="home">
