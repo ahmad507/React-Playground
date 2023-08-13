@@ -10,7 +10,12 @@ import "../styles/core/Global.css";
  *                                                                 |
  *-----------------------------------------------------------------|
  *  */
-import { BrowserRouter, Routes, NavLink, Route } from "react-router-dom";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
 
 /**-----------------------------------------------------------------
  * Import View                                                     |
@@ -21,31 +26,30 @@ import HomeView from "../views/home/home.view";
 import ProfileView from "../views/profile/profile.view";
 import AboutView from "../views/about/about.view";
 
+/**-----------------------------------------------------------------
+ * Import App Layout                                               |
+ * Main Layout Sebagai Outlet Dari Setiap View                     |
+ *-----------------------------------------------------------------|
+ *  */
+import AppLayout from "../layouts/app.layout";
+
+// Create Router Function sebagai props RouterProvider
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<AppLayout></AppLayout>}>
+      {/* Route Each View Start*/}
+      <Route index element={<HomeView></HomeView>}></Route>
+      <Route path="about" element={<AboutView></AboutView>}></Route>
+      <Route path="profile" element={<ProfileView></ProfileView>}></Route>
+      {/* Route Each View End*/}
+    </Route>
+  )
+);
+
 function App() {
   return (
-    // Bungkus Root App Menggunakan BrowserRouter
-    <BrowserRouter>
-      {/* Navigation Header Start */}
-      <header>
-        <nav>
-          <h1>React Router</h1>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="about">About</NavLink>
-          <NavLink to="profile">Profile</NavLink>
-        </nav>
-      </header>
-      {/* Navigation Header End */}
-
-      {/* Main Content Start */}
-      <main>
-        <Routes>
-          <Route index element={<HomeView></HomeView>}></Route>
-          <Route path="about" element={<AboutView></AboutView>}></Route>
-          <Route path="profile" element={<ProfileView></ProfileView>}></Route>
-        </Routes>
-      </main>
-      {/* Main Content End */}
-    </BrowserRouter>
+    // Bungkus Root App Menggunakan BrowserRouter dengan Menggunakan Router Profider
+    <RouterProvider router={router}></RouterProvider>
   );
 }
 
