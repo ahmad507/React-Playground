@@ -3,7 +3,6 @@
  *                                                                 |
  *-----------------------------------------------------------------|
  *  */
-import "./App.css";
 import "../styles/core/Global.css";
 /**-----------------------------------------------------------------
  * Import React Router                                             |
@@ -27,11 +26,20 @@ import ProfileView from "../views/profile/profile.view";
 import AboutView from "../views/about/about.view";
 
 /**-----------------------------------------------------------------
+ * Import Page                                                     |
+ * Page Merupakan Halaman Statis Dari App                          |
+ *-----------------------------------------------------------------|
+ *  */
+import FaqPage from "../pages/faq/faq.page";
+import ContactPage from "../pages/contact/contact.page";
+
+/**-----------------------------------------------------------------
  * Import App Layout                                               |
  * Main Layout Sebagai Outlet Dari Setiap View                     |
  *-----------------------------------------------------------------|
  *  */
 import AppLayout from "../layouts/app.layout";
+import HelpLayout from "../layouts/help.layout";
 
 // Create Router Function sebagai props RouterProvider
 const router = createBrowserRouter(
@@ -41,6 +49,10 @@ const router = createBrowserRouter(
       <Route index element={<HomeView></HomeView>}></Route>
       <Route path="about" element={<AboutView></AboutView>}></Route>
       <Route path="profile" element={<ProfileView></ProfileView>}></Route>
+      <Route path="help" element={<HelpLayout></HelpLayout>}>
+        <Route path="faq" element={<FaqPage></FaqPage>}></Route>
+        <Route path="contact" element={<ContactPage></ContactPage>}></Route>
+      </Route>
       {/* Route Each View End*/}
     </Route>
   )
