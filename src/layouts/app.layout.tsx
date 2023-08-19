@@ -21,6 +21,7 @@ const AppLayout = () => {
           <NavLink to="/">Home</NavLink>
           <NavLink to="about">About</NavLink>
           <NavLink to="profile">Profile</NavLink>
+          <NavLink to="help">Help</NavLink>
         </nav>
       </header>
       {/* Navigation Header End */}
