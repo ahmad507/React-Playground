@@ -4,11 +4,7 @@
  * Sehingga Semua View Akan Menginduk Pada Main Layout             |
  *-----------------------------------------------------------------|
  **/
-/**-----------------------------------------------------------------
- * Import React Router                                             |
- *                                                                 |
- *-----------------------------------------------------------------|
- *  */
+
 import { NavLink, Outlet } from "react-router-dom";
 
 const AppLayout = () => {
