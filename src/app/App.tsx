@@ -32,6 +32,7 @@ import AboutView from "../views/about/about.view";
  *  */
 import FaqPage from "../pages/faq/faq.page";
 import ContactPage from "../pages/contact/contact.page";
+import NotFoundPage from "../pages/utils/notfound.page";
 
 /**-----------------------------------------------------------------
  * Import App Layout                                               |
@@ -53,6 +54,7 @@ const router = createBrowserRouter(
         <Route path="faq" element={<FaqPage></FaqPage>}></Route>
         <Route path="contact" element={<ContactPage></ContactPage>}></Route>
       </Route>
+      <Route path="*" element={<NotFoundPage></NotFoundPage>}></Route>
       {/* Route Each View End*/}
     </Route>
   )
